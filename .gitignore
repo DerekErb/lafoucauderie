@@ -1,0 +1,20 @@
+# Git Ignore
+
+# Binary Graphics
+*.ico
+*.jpg
+*.png
+
+
+# Fonts
+*.eot
+*.ttf
+*.woff
+*.woff2
+
+# OS Files
+.DS_Store
+
+# .idea folder and all files underneath
+.idea/**
+

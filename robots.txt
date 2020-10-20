@@ -1,0 +1,6 @@
+# lafoucauderie.com
+# derek@derekerb.solutions
+
+# Disallow indexing
+User-agent: *
+Disallow: /csvout
