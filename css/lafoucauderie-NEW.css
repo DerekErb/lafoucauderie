@@ -12,7 +12,7 @@ v0.01
 *********************************************************************/
 @font-face {
     font-family: "Caslon";
-    src: url("fonts/CaslonCP.otf") format("otf");
+    src: url("/fonts/CaslonCP.otf") format("otf");
 }
 /*********************************************************************
 	DEFAULTS
@@ -22,6 +22,7 @@ v0.01
 
     --PgBack: white;
     --PgFore: #88853A;
+    --Dark: #000000;
 
     --FontJardins: "Caslon", times, serif;
 
@@ -187,6 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2em;
+    color: var(--Dark);
 }
 
 img, embed, object, video {
@@ -215,50 +217,90 @@ ul {
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
     max-width: 100%;
     min-height: 30vh;
 }
 
 header img {
-    height: 100%;
+    width: 50%;
+    height: 50%;
 }
+    /* TABLET AND DESKTOP VERSION */
+    @media screen and (min-width: 800px) {
+        header img {
+            width: 30%;
+            height: 30%;
+        }
+    }
+
 
 /**********************
 	SECTIONS
 **********************/
 
-.sectContact, .sectHero, .sectProducts, .sectAbout {
+section {
+    margin-bottom: 2em;
+}
+    /* TABLET AND DESKTOP*/
+    @media screen and (min-width: 800px) {
+        section img {
+            max-height: 40%;
+            max-width: 40%;
+        }
+    }
+
+
+.sectContact, .sectHero, .sectProducts, .sectAbout, .sectAccess {
     border-bottom: lightgrey solid 0.125em;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
-
 
 .sectContact > * {
     margin: 0.5em 0;
 }
 
 .sectContact #dContact {
-    margin: 3em 0;
+    margin: 0 0 3em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.sectProducts {
+    /* TABLET AND DESKTOP VERSION */
+    @media screen and (min-width: 800px) {
+        .sectProducts {
+            flex-direction: row;
 
-}
+        }
+    }
 
 /**********************
 	SUBSECTIONS
 **********************/
 
 .dAbout {
-    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+    /* TABLET AND DESKTOP VERSION */
+    @media screen and (min-width: 800px) {
+        .dAbout {
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 3em 0;
+        }
+    }
 .dAbout p {
     padding: 1.5em;
+    text-align: justify;
 }
 
 .dAccess {
@@ -271,7 +313,29 @@ header img {
     max-width: 100%;
 }
 
+.dProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    /* TABLET AND DESKTOP VERSION */
+    @media screen and (min-width: 800px) {
+        .dProduct {
+            width: 33%;
+        }
+        .dProduct img {
+            min-width: 90%;
+        }
+    }
 
+    /* TABLET AND DESKTOP VERSION */
+    @media screen and (min-width: 800px) {
+        .sdAbout {
+            flex-direction: column;
+            width: 50%;
+
+        }
+    }
 /**********************
 	FOOTER
 **********************/
