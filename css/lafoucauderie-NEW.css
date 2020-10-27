@@ -23,6 +23,7 @@ v0.01
     --PgBack: white;
     --PgFore: #88853A;
     --Dark: #000000;
+    --LighterDark: grey;
 
     --FontJardins: "Caslon", times, serif;
 
@@ -260,6 +261,16 @@ section {
 
 }
 
+.sectAbout {
+    border-bottom: none;
+}
+    /* TABLET AND DESKTOP VERSION */
+    @media screen and (min-width: 800px) {
+        .sectAbout {
+            border-bottom: lightgrey solid 0.125em;
+        }
+    }
+
 .sectContact > * {
     margin: 0.5em 0;
 }
@@ -276,7 +287,8 @@ section {
     @media screen and (min-width: 800px) {
         .sectProducts {
             flex-direction: row;
-
+            justify-content: space-between;
+            align-items: stretch;
         }
     }
 
@@ -298,6 +310,13 @@ section {
             padding: 3em 0;
         }
     }
+
+.dAbout img {
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+
+}
+
 .dAbout p {
     padding: 1.5em;
     text-align: justify;
@@ -317,6 +336,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+    padding: 1em;
+    margin: 1em;
 }
     /* TABLET AND DESKTOP VERSION */
     @media screen and (min-width: 800px) {
@@ -325,8 +348,18 @@ section {
         }
         .dProduct img {
             min-width: 90%;
+            max-height: 100%;
         }
     }
+
+.sdAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+
+}
 
     /* TABLET AND DESKTOP VERSION */
     @media screen and (min-width: 800px) {
