@@ -271,15 +271,20 @@ section {
     }
 
 .sectAccess {
-    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
     box-shadow: 2px 2px 5px var(--LighterDark);
-    margin: auto auto;
+    padding: 1em;
+    margin: 1em;
 }
 
     /* TABLET AND DESKTOP VERSION */
     @media screen and (min-width: 1200px) {
         .sectAccess {
             width: 70%;
+            margin: 1em auto;
         }
     }
 
