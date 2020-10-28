@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="Viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Découvrez les Jardins de La Foucauderie : des légumes et fruits bio produits localement aux alentours de Graçay et Vierzon"/>
-    <meta name="keywords" content="vierzon, gracay, bio, légumes, fruits, livraison"/>
+    <meta name="keywords" content="bio, légumes, fruits, vierzon, gracay, livraison"/>
     <meta name="author" content="Derek Erb Solutions"/>
     <link rel="author" href="https://derekerb.solutions" />
     <meta name="copyright" content="Copyright © Derek Erb Solutions"/>
@@ -19,7 +19,7 @@
     <meta name="Resource-Type" content="document" />
     <meta name="Distribution" content="global" />
     <meta name="Robots" content="index, follow" />
-    <meta name="Revisit-After" content="14 days" />
+    <meta name="Revisit-After" content="30 days" />
     <meta name="Rating" content="general" />
 
     <!-- icons -->
@@ -48,12 +48,15 @@
 
 <body>
 <header>
-    <img src="imgs/logo-jardinsfoucauderie.jpg" class="mainLogo" alt="Les Jardins de La Foucauderie">
+    <picture>
+        <source srcset="/imgs/logo-dt.jpg" media="(min-width: 1025px)" />
+        <source srcset="/imgs/logo-tab.jpg" media="(min-width: 800px)" />
+        <img src="/imgs/logo-sp.jpg" alt="Les Jardins de la Foucauderie">
+    </picture>
 </header>
 
 <section class="sectHero">
-
-        <img alt="Tomates" src="imgs/tomates.jpg">
+        <img id="iTomates" alt="Tomates" src="imgs/tomates.jpg">
         <h1>
             Des légumes et des fruits près de chez vous !
         </h1>
@@ -61,19 +64,19 @@
 
 <section class="sectProducts">
     <div class="dProduct">
-        <img alt="Chou" src="imgs/chou.jpg">
+        <img id="iChou" alt="Chou" src="imgs/chou.jpg">
         <h2>
             Des produits locaux
         </h2>
     </div>
     <div class="dProduct">
-        <img alt="Aubergines" src="imgs/aubergines.jpg">
+        <img id="iAubergines" alt="Aubergines" src="imgs/aubergines.jpg">
         <h2>
             Des produits frais
         </h2>
     </div>
     <div class="dProduct">
-        <img alt="Poivrons" src="imgs/poivrons.jpg">
+        <img id="iPoivrons" alt="Poivrons" src="imgs/poivrons.jpg">
         <h2>
             Des produits de saison
         </h2>
@@ -84,7 +87,7 @@
     <h1>À propos de nous</h1>
 
     <div class="dAbout">
-        <img alt="Cécile Vandenbroucque" src="imgs/cecile.jpg">
+        <img id="iCecile" alt="Cécile Vandenbroucque" src="imgs/cecile.jpg">
         <div class="sdAbout">
             <h2>
                 Cécile Vandenbroucque
@@ -128,7 +131,7 @@
 
 <!-- *** FOOTER *** -->
 <footer>
-    Site Web 2020 &copy; <a rel="external noopener" href="https://derekerb.solutions" target="_blank" aria-label="Derek Erb Solutions" title="Derek Erb Solutions">Derek Erb Solutions</a>. <span>Tous droits réservés.</span><br>
+    Site Web 2020 &copy; <a rel="external noopener" href="https://derekerb.solutions" target="_blank" aria-label="Derek Erb Solutions" title="Derek Erb Solutions">Derek Erb Solutions</a>. <span class="spNobr">Tous droits réservés.</span><br>
 </footer>
 
 </body>

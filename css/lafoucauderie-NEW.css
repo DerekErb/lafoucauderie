@@ -1,9 +1,9 @@
 /**********************
-index.css
+index-NEW.css
 Copyright 2020 Derek Erb Solutions
 https://derekerb.solutions
 
-v0.01
+v0.00
 
 **********************/
 
@@ -14,10 +14,10 @@ v0.01
     font-family: "Caslon";
     src: url("/fonts/CaslonCP.otf") format("otf");
 }
+
 /*********************************************************************
 	DEFAULTS
 *********************************************************************/
-
 :root {
 
     --PgBack: white;
@@ -50,66 +50,56 @@ body {
 
 }
 
-/* Wide smartphones */
-@media screen and (min-width: 480px) {
-    body {
-        max-width: 480px;
-    }
-}
-
-/* tablets */
-@media screen and (min-width: 800px) {
-    body {
-        max-width: 800px;
-    }
-}
-
-/* desktops */
-@media screen and (min-width: 1200px) {
-    body {
-        max-width: 1200px;
-    }
-}
-
-/* print */
-@media print {
-    body {
-        display: inherit;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+    /* ---------------------------- SMARTPHONES -------------------------- */
+    @media screen and (min-width: 480px) {
+        body {
+            max-width: 480px;
+        }
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        -webkit-column-break-after: avoid;
-        page-break-after: avoid;
-        break-after: avoid;
+    /* ----------------------------- TABLETS ----------------------------- */
+    @media screen and (min-width: 800px) {
+        body {
+            max-width: 800px;
+        }
     }
 
-    ul, ol {
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid;
+    /* ----------------------------- DESKTOPS ---------------------------- */
+    @media screen and (min-width: 1200px) {
+        body {
+            max-width: 1200px;
+        }
     }
 
-    nav#navFoot {
-        -webkit-column-break-after: avoid;
-        page-break-after: avoid;
-        break-after: avoid;
+    /* ------------------------------- PRINT ----------------------------- */
+    @media print {
+        body {
+            display: inherit;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            -webkit-column-break-after: avoid;
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+
+        ul, ol {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
     }
 
-    @page {
-        margin: 1.5cm 1.5cm;
+    @media print and (color) {
+        /* Force print backgrounds */
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
     }
-}
-
-@media print and (color) {
-    /* Force print backgrounds */
-    * {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-}
 
 
 /**********************
@@ -126,12 +116,12 @@ html {
     padding: 0;
 }
 
-/* --------------- Printing ----------------- */
-@media print {
-    html {
-        font-size: 14pt;
+    /* ------------------------------- PRINT ----------------------------- */
+    @media print {
+        html {
+            font-size: 14pt;
+        }
     }
-}
 
 a {
     text-decoration: none;
@@ -140,20 +130,20 @@ a {
     background: var(--PgBack);
 }
 
-/* ----- Devices without Hover ----- */
-@media (hover: none) {
-    a {
-        color: var(--LinkFore);
-        text-decoration: none;
-        border-bottom: var(--PgFore) 0.125em solid;
-        -webkit-text-decoration-color: var(--PgFore);
-    }
+    /* ---------------------- DEVICES WITHOUT HOVER ---------------------- */
+    @media (hover: none) {
+        a {
+            color: var(--LinkFore);
+            text-decoration: none;
+            border-bottom: var(--PgFore) 0.125em solid;
+            -webkit-text-decoration-color: var(--PgFore);
+        }
 
-    a.vernum {
-        text-decoration: none;
-        border-bottom: none;
+        a.vernum {
+            text-decoration: none;
+            border-bottom: none;
+        }
     }
-}
 
 a:hover, a:focus {
     color: var(--LinkFore);
@@ -180,7 +170,7 @@ div, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:  1em 0;
+    margin:  1em 0 0 0;
     padding: 0;
     font-family: var(--FontJardins);
     text-align: center;
@@ -202,17 +192,16 @@ ul {
     margin: 0;
 }
 
-.spMainTit {
-    font-family: var(--FontJardins);
-    text-transform: uppercase;
-}
+/**********************
+	BLOCKS
+**********************/
 
-.spMainTit3 {
-    font-size: 1.1em;
+span .spNobr {
+    white-space: nowrap;
 }
 
 /**********************
-	BLOCKS
+	HEADER
 **********************/
 
 header {
@@ -223,19 +212,6 @@ header {
     min-height: 30vh;
 }
 
-header img {
-    width: 50%;
-    height: 50%;
-}
-    /* TABLET AND DESKTOP VERSION */
-    @media screen and (min-width: 800px) {
-        header img {
-            width: 30%;
-            height: 30%;
-        }
-    }
-
-
 /**********************
 	SECTIONS
 **********************/
@@ -243,7 +219,8 @@ header img {
 section {
     margin-bottom: 2em;
 }
-    /* TABLET AND DESKTOP*/
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         section img {
             max-height: 40%;
@@ -257,18 +234,11 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .sectAbout {
     border-bottom: none;
 }
-    /* TABLET AND DESKTOP VERSION */
-    @media screen and (min-width: 800px) {
-        .sectAbout {
-
-        }
-    }
 
 .sectAccess {
     display: flex;
@@ -280,7 +250,7 @@ section {
     margin: 1em;
 }
 
-    /* TABLET AND DESKTOP VERSION */
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 1200px) {
         .sectAccess {
             width: 70%;
@@ -301,7 +271,7 @@ section {
 }
 
 
-    /* TABLET AND DESKTOP VERSION */
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .sectProducts {
             flex-direction: row;
@@ -324,7 +294,7 @@ section {
     margin: 1em;
 }
 
-    /* TABLET AND DESKTOP VERSION */
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .dAbout {
             flex-direction: row;
@@ -365,7 +335,8 @@ section {
     padding: 1em;
     margin: 1em;
 }
-    /* TABLET AND DESKTOP VERSION */
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .dProduct {
             width: 33%;
@@ -384,11 +355,9 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
 }
 
-    /* TABLET AND DESKTOP VERSION */
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .sdAbout {
             flex-direction: column;
@@ -397,6 +366,7 @@ section {
             box-shadow: 2px 2px 5px var(--LighterDark);
         }
     }
+
 /**********************
 	FOOTER
 **********************/
@@ -406,6 +376,3 @@ footer {
     padding: 2em 1em;
 }
 
-footer span {
-    white-space: nowrap;
-}
