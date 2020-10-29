@@ -170,7 +170,7 @@ div, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:  1em 0 0 0;
+    margin:  1em 0;
     padding: 0;
     font-family: var(--FontJardins);
     text-align: center;
@@ -212,6 +212,11 @@ header {
     min-height: 30vh;
 }
 
+picture {
+    display: flex;
+    justify-content: center;
+}
+
 /**********************
 	SECTIONS
 **********************/
@@ -220,13 +225,13 @@ section {
     margin-bottom: 2em;
 }
 
-    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+  /*  !* ---------------------- TABLETS AND DESKTOPS ----------------------- *!
     @media screen and (min-width: 800px) {
         section img {
             max-height: 40%;
             max-width: 40%;
         }
-    }
+    }*/
 
 
 .sectContact, .sectHero, .sectProducts, .sectAbout, .sectAccess {
@@ -234,10 +239,6 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.sectAbout {
-    border-bottom: none;
 }
 
 .sectAccess {
@@ -271,6 +272,15 @@ section {
 }
 
 
+    @media screen and (min-width: 800px) {
+        .sectHero img {
+            border-radius: 30px;
+            box-shadow: 2px 2px 5px var(--LighterDark);
+
+        }
+    }
+
+
     /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .sectProducts {
@@ -299,8 +309,8 @@ section {
         .dAbout {
             flex-direction: row;
             justify-content: space-around;
-            padding: 3em 0;
-            box-shadow: none;
+            padding: 3em 2em;
+
         }
     }
 
@@ -361,9 +371,8 @@ section {
     @media screen and (min-width: 800px) {
         .sdAbout {
             flex-direction: column;
-            width: 50%;
-            border-radius: 20px;
-            box-shadow: 2px 2px 5px var(--LighterDark);
+            width: 100%;
+
         }
     }
 
