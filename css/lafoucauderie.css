@@ -1,29 +1,32 @@
 /**********************
-index.css
+index-NEW.css
 Copyright 2020 Derek Erb Solutions
 https://derekerb.solutions
 
-v0.01
+v1.0
 
 **********************/
 
 /*********************************************************************
 	FONTS
 *********************************************************************/
+@font-face {
+    font-family: "Caslon";
+    src: url("/fonts/CaslonCP.otf") format("otf");
+}
 
 /*********************************************************************
 	DEFAULTS
 *********************************************************************/
-
 :root {
 
     --PgBack: white;
     --PgFore: #88853A;
+    --Dark: #000000;
+    --LighterDark: grey;
 
-    --FontZ: Zilvertype;
-    --FontZSC: ZilvertypeSC;
+    --FontJardins: "Caslon", times, serif;
 
-    --FontJardins: var(--FontZ), times, serif;
 
     --FontBody: Urbanist, sans-serif;
     --FontBtns:	arial, helvetica, sans-serif;
@@ -43,31 +46,32 @@ body {
     font-family: var(--FontBody);
 
     margin: 0 auto;
-    padding: 0 2%;
+    padding: 0;
+
 }
 
-    /* Wide smartphones */
+    /* ---------------------------- SMARTPHONES -------------------------- */
     @media screen and (min-width: 480px) {
         body {
             max-width: 480px;
         }
     }
 
-    /* tablets */
+    /* ----------------------------- TABLETS ----------------------------- */
     @media screen and (min-width: 800px) {
         body {
             max-width: 800px;
         }
     }
 
-    /* desktops */
+    /* ----------------------------- DESKTOPS ---------------------------- */
     @media screen and (min-width: 1200px) {
         body {
             max-width: 1200px;
         }
     }
 
-    /* print */
+    /* ------------------------------- PRINT ----------------------------- */
     @media print {
         body {
             display: inherit;
@@ -86,16 +90,6 @@ body {
             -webkit-column-break-inside: avoid;
             page-break-inside: avoid;
             break-inside: avoid;
-        }
-
-        nav#navFoot {
-            -webkit-column-break-after: avoid;
-            page-break-after: avoid;
-            break-after: avoid;
-        }
-
-        @page {
-            margin: 1.5cm 1.5cm;
         }
     }
 
@@ -122,7 +116,7 @@ html {
     padding: 0;
 }
 
-    /* --------------- Printing ----------------- */
+    /* ------------------------------- PRINT ----------------------------- */
     @media print {
         html {
             font-size: 14pt;
@@ -136,7 +130,7 @@ a {
     background: var(--PgBack);
 }
 
-    /* ----- Devices without Hover ----- */
+    /* ---------------------- DEVICES WITHOUT HOVER ---------------------- */
     @media (hover: none) {
         a {
             color: var(--LinkFore);
@@ -176,11 +170,16 @@ div, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+    margin:  1em 0;
     padding: 0;
     font-family: var(--FontJardins);
     text-align: center;
     font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+    color: var(--Dark);
 }
 
 img, embed, object, video {
@@ -193,53 +192,193 @@ ul {
     margin: 0;
 }
 
-.spMainTit {
-    font-family: var(--FontJardins);
-    text-transform: uppercase;
-}
-
-.spMainTit3 {
-    font-size: 1.1em;
-}
-
 /**********************
 	BLOCKS
 **********************/
 
-h1 {
-    margin: 1em 0;
-    font-size: 2em;
+span .spNobr {
+    white-space: nowrap;
 }
 
-h2 {
-    font-size: 1.5em;
+/**********************
+	HEADER
+**********************/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    min-height: 30vh;
 }
 
-h3 {
-    font-size: 1.2em;
+/**********************
+	SECTIONS
+**********************/
+
+section {
+    margin-bottom: 2em;
 }
 
-.sectContact {
-    height: 100vh;
+.sectContact, .sectHero, .sectProducts, .sectAbout, .sectAccess {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectAccess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+    padding: 1em;
+    margin: 1em;
+}
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+    @media screen and (min-width: 1200px) {
+        .sectAccess {
+            width: 70%;
+            margin: 1em auto;
+        }
+    }
+
+.sectContact > * {
+    margin: 0.5em 0;
+}
+
+.sectContact #dContact {
+    margin: 0 0 3em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.sectHero picture {
+    width: 100%;
+}
+.sectHero picture img {
+    width: 100%;
+}
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+    @media screen and (min-width: 800px) {
+        .sectHero picture {
+            width: inherit;
+        }
+
+        .sectHero img {
+            border-radius: 30px;
+            box-shadow: 2px 2px 5px var(--LighterDark);
+
+        }
+    }
+
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+    @media screen and (min-width: 800px) {
+        .sectProducts {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+    }
+
+/**********************
+	SUBSECTIONS
+**********************/
+
+.dAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+    padding: 1em;
+    margin: 1em;
+}
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+    @media screen and (min-width: 800px) {
+        .dAbout {
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 3em 2em;
+
+        }
+    }
+
+.dAbout img {
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+
+}
+
+.dAbout p {
+    padding: 0 1.5em;
+    text-align: justify;
+    margin: 0 0 1em 0;
+}
+
+.dAccess {
+    padding: 1em;
+}
+
+.dAccess iframe {
+    max-width: 100%;
+}
+
+.dAccess p {
     text-align: center;
 }
 
-#dContact {
-    margin: 3em 0;
+.dProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+    padding: 1em;
+    margin: 1em;
 }
 
-#dContact > * {
-    margin: 0.5em 0;
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+    @media screen and (min-width: 800px) {
+        .dProduct {
+            width: 33%;
+        }
+    }
+
+.dProduct img {
+    border-radius: 30px;
 }
+
+.sdAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
+    @media screen and (min-width: 800px) {
+        .sdAbout {
+            flex-direction: column;
+            width: 100%;
+
+        }
+    }
+
+/**********************
+	FOOTER
+**********************/
 
 footer {
     margin: 60vh 10% 4% 10%;
     border-top: 1px solid var(--PgFore);
-    padding-top: 1%;
+    padding: 2em 1em;
 
     text-align: center;
     font-size: 0.8em;
