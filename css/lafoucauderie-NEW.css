@@ -212,11 +212,6 @@ header {
     min-height: 30vh;
 }
 
-picture {
-    display: flex;
-    justify-content: center;
-}
-
 /**********************
 	SECTIONS
 **********************/
@@ -271,6 +266,19 @@ section {
     justify-content: center;
 }
 
+.sectHero picture {
+    width: 100%;
+}
+.sectHero picture img {
+    width: 100%;
+}
+
+    @media screen and (min-width: 800px) {
+        .sectHero picture {
+            width: inherit;
+
+        }
+    }
 
     @media screen and (min-width: 800px) {
         .sectHero img {
@@ -350,10 +358,6 @@ section {
     @media screen and (min-width: 800px) {
         .dProduct {
             width: 33%;
-        }
-        .dProduct img {
-            min-width: 90%;
-            max-height: 100%;
         }
     }
 
