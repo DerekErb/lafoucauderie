@@ -3,7 +3,7 @@ index-NEW.css
 Copyright 2020 Derek Erb Solutions
 https://derekerb.solutions
 
-v0.00
+v0.9
 
 **********************/
 
@@ -220,15 +220,6 @@ section {
     margin-bottom: 2em;
 }
 
-  /*  !* ---------------------- TABLETS AND DESKTOPS ----------------------- *!
-    @media screen and (min-width: 800px) {
-        section img {
-            max-height: 40%;
-            max-width: 40%;
-        }
-    }*/
-
-
 .sectContact, .sectHero, .sectProducts, .sectAbout, .sectAccess {
     padding: 0;
     display: flex;
@@ -273,14 +264,12 @@ section {
     width: 100%;
 }
 
+    /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .sectHero picture {
             width: inherit;
-
         }
-    }
 
-    @media screen and (min-width: 800px) {
         .sectHero img {
             border-radius: 30px;
             box-shadow: 2px 2px 5px var(--LighterDark);
@@ -337,11 +326,13 @@ section {
 .dAccess {
     padding: 1em;
 }
-.dAccess p {
-    text-align: center;
-}
+
 .dAccess iframe {
     max-width: 100%;
+}
+
+.dAccess p {
+    text-align: center;
 }
 
 .dProduct {
@@ -385,7 +376,12 @@ section {
 **********************/
 
 footer {
-    text-align: center;
+    margin: 60vh 10% 4% 10%;
+    border-top: 1px solid var(--PgFore);
     padding: 2em 1em;
+
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
 }
 
