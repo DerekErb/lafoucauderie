@@ -249,7 +249,7 @@ section {
     margin: 0.5em 0;
 }
 
-.sectContact #dContact {
+.sectContact #iContact {
     margin: 0 0 3em 0;
     display: flex;
     flex-direction: column;
