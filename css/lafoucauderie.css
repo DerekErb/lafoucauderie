@@ -3,7 +3,7 @@ index-NEW.css
 Copyright 2020 Derek Erb Solutions
 https://derekerb.solutions
 
-v1.0
+v1.01a
 
 **********************/
 
@@ -138,11 +138,6 @@ a {
             border-bottom: var(--PgFore) 0.125em solid;
             -webkit-text-decoration-color: var(--PgFore);
         }
-
-        a.vernum {
-            text-decoration: none;
-            border-bottom: none;
-        }
     }
 
 a:hover, a:focus {
@@ -151,18 +146,6 @@ a:hover, a:focus {
     border-bottom: var(--PgFore) 0.125em solid;
 
     -webkit-text-decoration-color: var(--PgFore);
-}
-
-button {
-    background-color: var(--PgFore);
-    color: var(--PgBack);
-    border: 1px solid slategray;
-    border-radius: 10px;
-    font-family: var(--FontBtns);
-}
-
-button:active {
-    border: 4px solid red;
 }
 
 div, p {
@@ -196,9 +179,29 @@ ul {
 	BLOCKS
 **********************/
 
+#iEmail {
+    margin: 2em;
+}
+
+.infoButton {
+    padding: 0.8em;
+    background-color: var(--PgFore);
+    color: white;
+    white-space: nowrap;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px var(--LighterDark);
+    transition: background-color 0.6s;
+}
+
+.infoButton:hover {
+    background-color: white;
+    border: solid 0.125em var(--PgFore);
+}
+
 span.spNobr {
     white-space: nowrap;
 }
+
 
 /**********************
 	HEADER
@@ -277,7 +280,6 @@ section {
         }
     }
 
-
     /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
     @media screen and (min-width: 800px) {
         .sectProducts {
@@ -325,10 +327,12 @@ section {
 
 .dAccess {
     padding: 1em;
+    text-align: center;
 }
 
 .dAccess iframe {
     max-width: 100%;
+    margin-bottom: 1.5em;
 }
 
 .dAccess p {
@@ -370,6 +374,10 @@ section {
 
         }
     }
+
+#iTel, #iMapLink {
+    margin-bottom: 4%;
+}
 
 /**********************
 	FOOTER
