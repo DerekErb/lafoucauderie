@@ -277,13 +277,15 @@ section {
         }
     }
 
-/* ---------------------- PRINT ----------------------- */
-@media print {
-    .sectAccess {
-       padding: 0.5cm;
-        height: 25cm;
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .sectAccess {
+           padding: 0.5cm;
+            height: 25cm;
+            border-radius: 0;
+            box-shadow: none;
+        }
     }
-}
 
 .sectContact > * {
     margin: 0.5em 0;
