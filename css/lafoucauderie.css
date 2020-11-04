@@ -74,10 +74,11 @@ body {
     /* ------------------------------- PRINT ----------------------------- */
     @media print {
         body {
-            display: inherit;
+            display: block;
             width: 100%;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -91,6 +92,11 @@ body {
             page-break-inside: avoid;
             break-inside: avoid;
         }
+
+        @page {
+            margin: 1.5cm 1.5cm;
+        }
+
     }
 
     @media print and (color) {
@@ -214,6 +220,13 @@ header {
     max-width: 100%;
     min-height: 30vh;
 }
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .header img, header picture {
+            height: 5cm;
+            width: 8cm;
+        }
+    }
 
 /**********************
 	SECTIONS
@@ -229,6 +242,14 @@ section {
     flex-direction: column;
     align-items: center;
 }
+    @media print {
+        .sectContact, .sectHero, .sectProducts, .sectAbout, .sectAccess {
+            display: block;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+    }
 
 .sectAccess {
     display: flex;
@@ -247,6 +268,14 @@ section {
             margin: 1em auto;
         }
     }
+
+/* ---------------------- PRINT ----------------------- */
+@media print {
+    .sectAccess {
+       padding: 0.5cm;
+        height: 25cm;
+    }
+}
 
 .sectContact > * {
     margin: 0.5em 0;
@@ -289,6 +318,12 @@ section {
         }
     }
 
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .sectProducts {
+        }
+    }
+
 /**********************
 	SUBSECTIONS
 **********************/
@@ -312,6 +347,16 @@ section {
 
         }
     }
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .dAbout {
+            display: block;
+        }
+        .dAbout img {
+            height: 10cm;
+            width: 7.5cm;
+        }
+    }
 
 .dAbout img {
     border-radius: 30px;
@@ -330,10 +375,30 @@ section {
     text-align: center;
 }
 
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .dAccess {
+            padding: 0.3cm;
+        }
+    }
+
 .dAccess iframe {
     max-width: 100%;
     margin-bottom: 1.5em;
 }
+
+.dAccess img {
+    display: none;
+}
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .dAccess iframe {
+            display: none;
+        }
+        .dAccess img {
+            display: block;
+        }
+    }
 
 .dAccess p {
     text-align: center;
@@ -355,6 +420,15 @@ section {
             width: 33%;
         }
     }
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .dProduct {
+            display: inline-block;
+            width: 33%;
+            margin: 0.5cm;
+        }
+    }
+
 
 .dProduct img {
     border-radius: 30px;
@@ -375,9 +449,22 @@ section {
         }
     }
 
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        .sdAbout {
+            display: block;
+        }
+    }
+
 #iTel, #iMapLink {
     margin-bottom: 4%;
 }
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        #iMapLink {
+            margin-top: 2.5cm;
+        }
+    }
 
 /**********************
 	FOOTER
@@ -392,4 +479,10 @@ footer {
     font-size: 0.8em;
     font-style: italic;
 }
+    /* ---------------------- PRINT ----------------------- */
+    @media print {
+        footer {
+            margin: 2cm auto 1cm auto;
+        }
+    }
 
