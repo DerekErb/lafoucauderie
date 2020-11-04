@@ -222,9 +222,15 @@ header {
 }
     /* ---------------------- PRINT ----------------------- */
     @media print {
-        .header img, header picture {
+
+        header {
+            min-height: unset;
+        }
+
+        header img, header picture {
             height: 5cm;
             width: 8cm;
+            padding: 0;
         }
     }
 
@@ -242,6 +248,8 @@ section {
     flex-direction: column;
     align-items: center;
 }
+
+    /* ---------------------- PRINT ----------------------- */
     @media print {
         .sectContact, .sectHero, .sectProducts, .sectAbout, .sectAccess {
             display: block;
@@ -297,7 +305,7 @@ section {
 }
 
     /* ---------------------- TABLETS AND DESKTOPS ----------------------- */
-    @media screen and (min-width: 800px) {
+    @media print, screen and (min-width: 800px) {
         .sectHero picture {
             width: inherit;
         }
@@ -305,7 +313,6 @@ section {
         .sectHero img {
             border-radius: 30px;
             box-shadow: 2px 2px 5px var(--LighterDark);
-
         }
     }
 
@@ -315,12 +322,6 @@ section {
             flex-direction: row;
             justify-content: space-between;
             align-items: stretch;
-        }
-    }
-
-    /* ---------------------- PRINT ----------------------- */
-    @media print {
-        .sectProducts {
         }
     }
 
@@ -344,14 +345,17 @@ section {
             flex-direction: row;
             justify-content: space-around;
             padding: 3em 2em;
-
         }
     }
+
     /* ---------------------- PRINT ----------------------- */
     @media print {
         .dAbout {
             display: block;
+            border-radius: 0;
+            box-shadow: none;
         }
+
         .dAbout img {
             height: 10cm;
             width: 7.5cm;
@@ -424,11 +428,17 @@ section {
     @media print {
         .dProduct {
             display: inline-block;
-            width: 33%;
+            vertical-align: top;
+            width: 40%;
             margin: 0.5cm;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .dProduct img {
+            box-shadow: 2px 2px 5px var(--LighterDark);
         }
     }
-
 
 .dProduct img {
     border-radius: 30px;
