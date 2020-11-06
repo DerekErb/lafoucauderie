@@ -1,9 +1,9 @@
 /**********************
-index-NEW.css
+lafoucauderie.css
 Copyright 2020 Derek Erb Solutions
 https://derekerb.solutions
 
-v1.01a
+v1.02
 
 **********************/
 
@@ -198,6 +198,14 @@ ul {
     box-shadow: 2px 2px 5px var(--LighterDark);
     transition: background-color 0.6s;
 }
+
+/* ------------------------------- PRINT ----------------------------- */
+    @media print {
+        .infoButton {
+            border-radius: 0;
+            padding: 1em;
+        }
+    }
 
 .infoButton:hover {
     background-color: white;
