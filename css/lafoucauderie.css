@@ -3,7 +3,7 @@ lafoucauderie.css
 Copyright 2020 Derek Erb Solutions
 https://derekerb.solutions
 
-v1.02
+v1.02a
 
 **********************/
 
@@ -502,7 +502,8 @@ footer {
     /* ---------------------- PRINT ----------------------- */
     @media print {
         footer {
-            margin: 2cm auto 1cm auto;
+            margin-top: 13cm;
+            margin-bottom: 0;
         }
     }
 
